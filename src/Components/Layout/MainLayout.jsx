@@ -13,7 +13,7 @@ const MainLayout = () => {
                     <Outlet></Outlet>
                 </Container>
             </div>
-            <div className="mt-[373px]">
+            <div className="">
                 <Footer></Footer>
             </div>
         </div>
