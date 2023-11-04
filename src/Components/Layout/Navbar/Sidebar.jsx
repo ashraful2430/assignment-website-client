@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
     return (
-        <div className='flex flex-col gap-2 justify-center items-center'>
+        <div className='flex flex-col gap-2 justify-center items-center z-50'>
             <NavLink to={'/'}
                 className={({ isActive }) =>
                     isActive ?
