@@ -1,0 +1,27 @@
+#animate::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0%;
+  background-color: #333;
+  transition: all ease 1s;
+}
+
+#animate:hover::after {
+  width: 60%;
+  margin-left: 20%;
+}
+
+@media screen and (max-width: 480px) {
+  #animate::after {
+    width: 0%;
+    margin-left: 0;
+  }
+
+  #animate:hover::after {
+    width: 100%;
+    margin-left: 0;
+  }
+}

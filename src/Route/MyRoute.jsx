@@ -5,10 +5,11 @@ import Home from "../Components/Layout/Home/Home";
 import Assignments from "../Pages/Assignments";
 import Login from "../Pages/Login"
 import Register from "../Pages/Register";
-import CreateAssignment from "../Pages/CreateAssignment";
+
 import MyAssignments from "../Pages/MyAssignments";
 import SubmitedAssignments from "../Pages/SubmitedAssignments";
 import PrivateRoute from "./PrivateRoute";
+import CreateAssignment from "../Pages/CreateAssignment/CreateAssignment";
 
 const router = createBrowserRouter([
     {
