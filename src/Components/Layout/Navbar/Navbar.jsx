@@ -5,7 +5,7 @@ import Sidebar from "./Sidebar";
 
 const Navbar = () => {
     return (
-        <div>
+        <div className="relative">
             <div className="drawer">
                 <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content flex flex-col">
