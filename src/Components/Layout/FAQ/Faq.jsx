@@ -16,7 +16,7 @@ const Faq = () => {
             animation.start({
                 x: 0,
                 transition: {
-                    type: 'spring', duration: 3, bounce: 0.3
+                    type: "spring", duration: 3, bounce: 0.3
                 }
             });
         }
