@@ -11,7 +11,7 @@ import Slide3 from "./Slide3";
 const Banner = () => {
     return (
         <>
-            <div className="mt-10 hover:cursor-grabbing">
+            <div className="mt-10 z-0 hover:cursor-grabbing">
                 <Swiper
                     spaceBetween={10}
                     centeredSlides={true}

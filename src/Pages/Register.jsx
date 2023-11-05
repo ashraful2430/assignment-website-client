@@ -1,16 +1,34 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from 'react-icons/fc'
 import { FaSquareFacebook } from 'react-icons/fa6'
 import { BsGithub } from 'react-icons/bs'
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai'
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../Provider/AuthProvider/AuthProvider";
+import swal from "sweetalert";
 
 
 const Register = () => {
-
-
     const [showPass, setShowPass] = useState()
+    const { signUp, handleProfile, googleSignIn } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
 
+
+    const handleGoogleSignIn = e => {
+        e.preventDefault();
+        googleSignIn()
+            .then(result => {
+                swal("Good job!", "User Loged in successfully!", "success");
+                navigate(location?.state ? location.state : '/')
+                console.log(result.user);
+            })
+            .catch(error => {
+                const slicedMessage = error.message.slice(10, 50)
+                swal("ERROR!", slicedMessage, "error");
+                console.error(error);
+            })
+    }
 
     const handleLogIn = e => {
         e.preventDefault();
@@ -20,6 +38,25 @@ const Register = () => {
         const password = form.password.value;
         const user = { name, email, password };
         console.log(user);
+
+        if (!/^(?=.*[A-Z])(?=.*[^A-Za-z0-9]).{6,}$/.test(password)) {
+            swal("ERROR!", "Password should have one uppercase and one special character and should be at least 6 characters!", "error");
+            return;
+        }
+
+        signUp(email, password)
+            .then(result => {
+                handleProfile(name)
+                e.target.reset();
+                console.log(result);
+                swal("Good job!", "User created successfully!", "success");
+                navigate(location?.state ? location.state : '/')
+            })
+            .catch(error => {
+                console.error(error);
+                const slicedMessage = error.message.slice(10, 50)
+                swal("ERROR!", slicedMessage, "error");
+            })
     }
 
     return (
@@ -110,7 +147,7 @@ const Register = () => {
                             <h1 className="font-semibold text-center my-4">Or Login with </h1>
                             <div className="flex justify-center items-center gap-4  mx-auto">
                                 <div>
-                                    <button className="btn btn-outline transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring"><FcGoogle></FcGoogle>Log in</button>
+                                    <button onClick={handleGoogleSignIn} className="btn btn-outline transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring"><FcGoogle></FcGoogle>Log in</button>
                                 </div>
                                 <div>
                                     <button className="btn btn-outline  transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring"><FaSquareFacebook className="text-blue-400"></FaSquareFacebook>Log in</button>
