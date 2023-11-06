@@ -1,14 +1,31 @@
 import { useLoaderData } from "react-router-dom";
+import Container from "../../Components/Ui/Container";
+import TakeAssignmentModal from "./TakeAssignmentModal";
 
 
 const AssignmentDetails = () => {
     const singleAssignment = useLoaderData();
-    const { title } = singleAssignment;
+    const { title, difficulty, marks, thumbnail, description, date } = singleAssignment;
     return (
-        <div>
-            <p>{title}</p>
-        </div>
+        <Container>
+            <div className="flex flex-col-reverse md:flex-row h-screen items-center">
+                <div className="space-y-3 flex-1">
+                    <h3 className="text-4xl font-bold">{title}</h3>
+                    <p className="text-xl">{description}</p>
+                    <div className="flex gap-5">
+                        <p className="font-semibold">Marks:{marks}</p>
+                        <p className="font-semibold">Difficulty:{difficulty}</p>
+                    </div>
+                    <p>Due Date:{date.slice(0, 10)}</p>
+                    <TakeAssignmentModal></TakeAssignmentModal>
+                </div>
+                <div className="flex-1">
+                    <img src={thumbnail} alt="" />
+                </div>
+            </div>
+        </Container>
     );
 };
 
 export default AssignmentDetails;
+
