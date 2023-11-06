@@ -11,26 +11,29 @@ import Slide3 from "./Slide3";
 const Banner = () => {
     return (
         <>
-            <div className="mt-10 z-0 hover:cursor-grabbing">
-                <Swiper
-                    spaceBetween={10}
-                    centeredSlides={true}
-                    autoplay={{
-                        delay: 3000,
-                        disableOnInteraction: false
-                    }}
-                    pagination={{
-                        clickable: true
-                    }}
-                    modules={[Autoplay, Pagination]}
-                    className="mySwiper"
-                >
-                    <SwiperSlide><Slide1></Slide1></SwiperSlide>
-                    <SwiperSlide><Slide2></Slide2></SwiperSlide>
-                    <SwiperSlide><Slide3></Slide3></SwiperSlide>
+            <section>
 
-                </Swiper>
-            </div>
+                <div className="mt-10 z-0 hover:cursor-grabbing">
+                    <Swiper
+                        spaceBetween={10}
+                        centeredSlides={true}
+                        autoplay={{
+                            delay: 3000,
+                            disableOnInteraction: false
+                        }}
+                        pagination={{
+                            clickable: true
+                        }}
+                        modules={[Autoplay, Pagination]}
+                        className="mySwiper"
+                    >
+                        <SwiperSlide><Slide1></Slide1></SwiperSlide>
+                        <SwiperSlide><Slide2></Slide2></SwiperSlide>
+                        <SwiperSlide><Slide3></Slide3></SwiperSlide>
+
+                    </Swiper>
+                </div>
+            </section>
         </>
     );
 };

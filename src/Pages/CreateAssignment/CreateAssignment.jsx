@@ -38,22 +38,7 @@ const CreateAssignment = () => {
                 console.error(error);
             });
 
-        // fetch('http://localhost:5000/assignments', {
-        //     method: 'POST',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(assignment)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         e.target.reset();
-        //         console.log(data);
-        //         if (data.insertedId) {
-        //             swal("Well Done!", "Product added successfully!", "success");
-        //         }
 
-        //     })
 
     };
 

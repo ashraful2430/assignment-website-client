@@ -2,7 +2,6 @@ import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../Components/Layout/MainLayout"
 import ErrorPage from "../Pages/ErrorPage";
 import Home from "../Components/Layout/Home/Home";
-import Assignments from "../Pages/Assignments";
 import Login from "../Pages/Login"
 import Register from "../Pages/Register";
 
@@ -10,6 +9,7 @@ import MyAssignments from "../Pages/MyAssignments";
 import SubmitedAssignments from "../Pages/SubmitedAssignments";
 import PrivateRoute from "./PrivateRoute";
 import CreateAssignment from "../Pages/CreateAssignment/CreateAssignment";
+import AllAssignments from "../Pages/AllAssignments/AllAssignments";
 
 const router = createBrowserRouter([
     {
@@ -23,7 +23,8 @@ const router = createBrowserRouter([
             },
             {
                 path: "/assignments",
-                element: <Assignments></Assignments>
+                element: <AllAssignments></AllAssignments>,
+                loader: () => fetch('http://localhost:5000/assignments')
             },
             {
                 path: "/createAssignments",
