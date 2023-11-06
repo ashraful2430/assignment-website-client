@@ -6,12 +6,13 @@ import Login from "../Pages/Login"
 import Register from "../Pages/Register";
 
 import MyAssignments from "../Pages/MyAssignments";
-import SubmitedAssignments from "../Pages/SubmitedAssignments";
+
 import PrivateRoute from "./PrivateRoute";
 import CreateAssignment from "../Pages/CreateAssignment/CreateAssignment";
 import AllAssignments from "../Pages/AllAssignments/AllAssignments";
 import UpdateAssignment from "../Pages/UpdateAssignment/UpdateAssignment";
 import AssignmentDetails from "../Pages/AssignmentsDetails/AssignmentDetails";
+import SubmitedAssignments from "../Pages/Submitted/SubmitedAssignments";
 
 const router = createBrowserRouter([
     {
@@ -38,7 +39,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/submittedAssignments",
-                element: <SubmitedAssignments></SubmitedAssignments>
+                element: <PrivateRoute><SubmitedAssignments></SubmitedAssignments></PrivateRoute>
             },
             {
                 path: "/updateAssignments/:id",

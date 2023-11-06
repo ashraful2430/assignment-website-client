@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
+import axios from 'axios';
+import swal from 'sweetalert';
 
 const TakeAssignment = ({ singleAssignment }) => {
     const { title, marks } = singleAssignment;
@@ -14,6 +16,18 @@ const TakeAssignment = ({ singleAssignment }) => {
         const note = form.note.value;
         const submittedAssignment = { email, pdfLink, note, title, marks, userName }
         console.log(submittedAssignment);
+
+        axios.post('http://localhost:5000/submitted', submittedAssignment)
+            .then(response => {
+                e.target.reset();
+                console.log(response.data);
+                if (response.data.insertedId) {
+                    swal("Well Done!", "Assignment submitted successfully!", "success");
+                }
+            })
+            .catch(error => {
+                console.error(error);
+            });
     }
 
     return (
@@ -59,11 +73,15 @@ const TakeAssignment = ({ singleAssignment }) => {
                             <textarea placeholder="Note" name="note" className="block  mt-2 w-full placeholder-gray-400/70 0 rounded-lg border border-gray-200 bg-white px-4 h-32 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40   "></textarea>
                         </div>
                         <div className="modal-action">
-
-                            <button type="submit" className="btn bg-red-500 text-white" onClick={() => document.getElementById('my_modal_5').close()}>Submit</button>
-
+                            <button type="submit" className="btn bg-red-500 text-white w-full" onClick={() => document.getElementById('my_modal_5').close()}>Submit</button>
                         </div>
+
                     </form>
+                    <div>
+                        <button className='btn bg-red-500 w-full mt-2 text-white' onClick={() => document.getElementById('my_modal_5').close()}>
+                            Close
+                        </button>
+                    </div>
                 </div>
             </dialog>
         </>

@@ -31,7 +31,7 @@ const CreateAssignment = () => {
                 e.target.reset();
                 console.log(response.data);
                 if (response.data.insertedId) {
-                    swal("Well Done!", "Product added successfully!", "success");
+                    swal("Well Done!", "Assignment added successfully!", "success");
                 }
             })
             .catch(error => {
