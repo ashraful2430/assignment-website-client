@@ -4,6 +4,8 @@ import { AuthContext } from '../../Provider/AuthProvider/AuthProvider';
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import axios from 'axios';
+import swal from 'sweetalert';
 
 
 
@@ -23,7 +25,36 @@ const CreateAssignment = () => {
         const description = form.description.value;
         const userEmail = user.email
         const assignment = { title, difficulty, marks, thumbnail, description, userEmail, date };
-        console.log(assignment);
+
+        axios.post('http://localhost:5000/assignments', assignment)
+            .then(response => {
+                e.target.reset();
+                console.log(response.data);
+                if (response.data.insertedId) {
+                    swal("Well Done!", "Product added successfully!", "success");
+                }
+            })
+            .catch(error => {
+                console.error(error);
+            });
+
+        // fetch('http://localhost:5000/assignments', {
+        //     method: 'POST',
+        //     headers: {
+        //         'content-type': 'application/json'
+        //     },
+        //     body: JSON.stringify(assignment)
+        // })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         e.target.reset();
+        //         console.log(data);
+        //         if (data.insertedId) {
+        //             swal("Well Done!", "Product added successfully!", "success");
+        //         }
+
+        //     })
+
     };
 
     return (
