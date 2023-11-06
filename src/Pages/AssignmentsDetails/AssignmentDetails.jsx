@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import Container from "../../Components/Ui/Container";
-import TakeAssignmentModal from "./TakeAssignmentModal";
+import TakeAssignment from "./TakeAssignment";
+
 
 
 const AssignmentDetails = () => {
@@ -17,7 +18,7 @@ const AssignmentDetails = () => {
                         <p className="font-semibold">Difficulty:{difficulty}</p>
                     </div>
                     <p>Due Date:{date.slice(0, 10)}</p>
-                    <TakeAssignmentModal></TakeAssignmentModal>
+                    <TakeAssignment singleAssignment={singleAssignment}></TakeAssignment>
                 </div>
                 <div className="flex-1">
                     <img src={thumbnail} alt="" />

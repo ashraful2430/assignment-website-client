@@ -1,17 +1,18 @@
+import PropTypes from 'prop-types';
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 
-
-const TakeAssignmentModal = () => {
+const TakeAssignment = ({ singleAssignment }) => {
+    const { title, marks } = singleAssignment;
     const { user } = useContext(AuthContext);
-
+    const userName = user.displayName;
     const handleSubmitAssignment = e => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
         const pdfLink = form.pdfLink.value;
         const note = form.note.value;
-        const submittedAssignment = { email, pdfLink, note }
+        const submittedAssignment = { email, pdfLink, note, title, marks, userName }
         console.log(submittedAssignment);
     }
 
@@ -69,4 +70,8 @@ const TakeAssignmentModal = () => {
     );
 };
 
-export default TakeAssignmentModal;
+TakeAssignment.propTypes = {
+    singleAssignment: PropTypes.object
+};
+
+export default TakeAssignment;
