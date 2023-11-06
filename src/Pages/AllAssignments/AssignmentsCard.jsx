@@ -1,10 +1,11 @@
 
 import PropTypes from 'prop-types';
 import './assign.css'
+import { Link } from 'react-router-dom';
 
 
 const AssignmentsCard = ({ assignment }) => {
-    const { title, difficulty, marks, thumbnail, description, date } = assignment;
+    const { title, difficulty, marks, thumbnail, description, date, _id } = assignment;
 
     return (
         <>
@@ -22,18 +23,22 @@ const AssignmentsCard = ({ assignment }) => {
                         <p className='font-medium text-lg text-gray-500'>{description}</p>
                         <p className='font-medium '>Due Date: {date.slice(0, 10)}</p>
                         <div className='flex flex-col gap-3'>
-                            <button
-                                className="inline-block rounded bg-red-500 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-red-500"
+                            <Link to={`/assignmentDetails/${_id}`}>
+                                <button
+                                    className="inline-block rounded w-full bg-red-500 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-red-500"
 
-                            >
-                                View Assignment
-                            </button>
-                            <button
-                                className="inline-block rounded bg-red-500 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-red-500"
+                                >
+                                    View Assignment
+                                </button>
+                            </Link>
+                            <Link to={`/updateAssignments/${_id}`}>
+                                <button
+                                    className="inline-block rounded w-full bg-red-500 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-red-500"
 
-                            >
-                                Update Assignment
-                            </button>
+                                >
+                                    Update Assignment
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
