@@ -3,7 +3,8 @@ import { useContext, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
+import swal from "sweetalert";
 
 
 
@@ -12,9 +13,9 @@ import { useLoaderData } from "react-router-dom";
 const UpdateAssignment = () => {
     const [startDate, setStartDate] = useState(new Date());
     const { user } = useContext(AuthContext)
-    const updateAssignment = useLoaderData();
-    const { title, difficulty, marks, thumbnail, description, date } = updateAssignment;
-
+    const loadAssignment = useLoaderData();
+    const { title, difficulty, marks, thumbnail, description, date, _id, userEmail } = loadAssignment;
+    const navigate = useNavigate()
     const handleUpdate = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -24,9 +25,28 @@ const UpdateAssignment = () => {
         const thumbnail = form.photo.value;
         const date = startDate;
         const description = form.description.value;
-        const userEmail = user.email
-        const assignment = { title, difficulty, marks, thumbnail, description, userEmail, date };
-        console.log(assignment);
+        const updatedAssignment = { title, difficulty, marks, thumbnail, description, date };
+        console.log(updatedAssignment);
+
+        if (user.email === userEmail) {
+            fetch(`http://localhost:5000/assignments/${_id}`, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(updatedAssignment)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.modifiedCount) {
+                        swal("Well done!", "Assignment has been updated!", "success");
+                        navigate('/assignments')
+                    }
+                })
+        } else {
+            swal("Sorry!", "You can not update this!", "error");
+        }
     }
 
     return (
