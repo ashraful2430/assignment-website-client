@@ -2,10 +2,14 @@
 import PropTypes from 'prop-types';
 import { useContext } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider/AuthProvider';
+import { Link } from 'react-router-dom';
 
-const TableRow = ({ submit }) => {
+
+const TableRow = ({ submit, }) => {
     const { user } = useContext(AuthContext);
-    const { email, title, userName, marks } = submit;
+    const { email, title, userName, marks, _id } = submit;
+
+
     return (
         <tr>
             <th>
@@ -30,7 +34,9 @@ const TableRow = ({ submit }) => {
             <td>{marks}</td>
             <td>Pending</td>
             <th>
-                <button className="btn btn-ghost btn-xs bg-red-500 text-white">Give marks</button>
+                <Link to={`/markAssignment/${_id}`}>
+                    <button className='btn btn-ghost btn-xs bg-red-500 text-white'>Give marks</button>
+                </Link>
             </th>
         </tr>
 
