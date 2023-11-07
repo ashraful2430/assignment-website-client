@@ -6,13 +6,33 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from 'axios';
 import swal from 'sweetalert';
-
+import { motion } from "framer-motion"
 
 
 const CreateAssignment = () => {
     const [startDate, setStartDate] = useState(new Date());
 
     const { user } = useContext(AuthContext)
+
+    const testVariants = {
+        initial: {
+            x: -500,
+            opacity: 0,
+        },
+        animate: {
+            x: 0,
+            opacity: 1,
+            transition: {
+                duration: 1,
+                staggerChildren: 0.1,
+            }
+        },
+        exit: {
+            x: 500,
+            opacity: 0,
+        }
+    }
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -51,7 +71,7 @@ const CreateAssignment = () => {
             </div>
             <div>
                 <section className="bg-white md:max-w-screen-xl mx-auto">
-                    <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
+                    <motion.div variants={testVariants} initial="initial" animate="animate" className="lg:grid lg:min-h-screen lg:grid-cols-12">
                         <section className="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6">
                             <img
                                 alt="Night"
@@ -175,7 +195,7 @@ const CreateAssignment = () => {
                                 </form>
                             </div>
                         </main>
-                    </div>
+                    </motion.div>
                 </section>
             </div>
         </>

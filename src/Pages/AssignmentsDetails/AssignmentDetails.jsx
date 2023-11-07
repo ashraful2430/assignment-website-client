@@ -65,7 +65,11 @@ const AssignmentDetails = () => {
                     </div>
                     <p>Due Date:{date.slice(0, 10)}</p>
                     <div>
-                        <TakeAssignment singleAssignment={singleAssignment}></TakeAssignment>
+                        <TakeAssignment
+                            description={description}
+                            date={date}
+                            thumbnail={thumbnail}
+                            singleAssignment={singleAssignment}></TakeAssignment>
                         <button onClick={() => handleDelete(_id)} className="btn btn-outline bg-red-500 text-white">Delete Assignment</button>
                     </div>
                 </div>

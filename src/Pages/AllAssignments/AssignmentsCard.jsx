@@ -2,15 +2,35 @@
 import PropTypes from 'prop-types';
 import './assign.css'
 import { Link } from 'react-router-dom';
-
+import { motion } from "framer-motion"
 
 const AssignmentsCard = ({ assignment }) => {
     const { title, difficulty, marks, thumbnail, description, date, _id } = assignment;
 
+    const testVariants = {
+        initial: {
+            x: -500,
+            opacity: 0,
+        },
+        animate: {
+            x: 0,
+            opacity: 1,
+            transition: {
+                duration: 1,
+                staggerChildren: 0.1,
+            }
+        },
+        exit: {
+            x: 500,
+            opacity: 0,
+        }
+    }
+
+
     return (
         <>
             <section className='h-screen mt-4'>
-                <div className='flex flex-col lg:flex-row justify-center items-center gap-10 max-w-6xl mx-auto mt-36 md:mt-64 lg:mt-0'>
+                <motion.div variants={testVariants} initial="initial" animate="animate" className='flex flex-col lg:flex-row justify-center items-center gap-10 max-w-6xl mx-auto mt-36 md:mt-64 lg:mt-0'>
                     <div className='flex-1'>
                         <img className='md:h-[400px]' src={thumbnail} alt="" />
                     </div>
@@ -41,7 +61,7 @@ const AssignmentsCard = ({ assignment }) => {
                             </Link>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </section>
         </>
     );

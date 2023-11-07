@@ -4,7 +4,7 @@ import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 import axios from 'axios';
 import swal from 'sweetalert';
 
-const TakeAssignment = ({ singleAssignment }) => {
+const TakeAssignment = ({ singleAssignment, description, date, thumbnail }) => {
     const { title, marks } = singleAssignment;
     const { user } = useContext(AuthContext);
     const userName = user.displayName;
@@ -14,7 +14,11 @@ const TakeAssignment = ({ singleAssignment }) => {
         const email = form.email.value;
         const pdfLink = form.pdfLink.value;
         const note = form.note.value;
-        const submittedAssignment = { email, pdfLink, note, title, marks, userName }
+        const userProfile = user.photoURL;
+        const status = 'pending'
+        const obtainMarks = 0;
+        const feedBack = ''
+        const submittedAssignment = { email, pdfLink, note, title, marks, userName, userProfile, description, date, thumbnail, status, obtainMarks, feedBack }
         console.log(submittedAssignment);
 
         axios.post('http://localhost:5000/submitted', submittedAssignment)
@@ -89,7 +93,10 @@ const TakeAssignment = ({ singleAssignment }) => {
 };
 
 TakeAssignment.propTypes = {
-    singleAssignment: PropTypes.object
+    singleAssignment: PropTypes.object,
+    description: PropTypes.string,
+    date: PropTypes.string,
+    thumbnail: PropTypes.string,
 };
 
 export default TakeAssignment;
