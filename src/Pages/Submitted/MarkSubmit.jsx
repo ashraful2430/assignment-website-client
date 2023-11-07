@@ -26,7 +26,7 @@ const MarkSubmit = () => {
                 if (data.modifiedCount) {
                     if (data.modifiedCount) {
                         swal("Well done!", "Assignment has been updated!", "success");
-                        navigate('/assignments')
+                        navigate('/submittedAssignments')
                     }
                 }
             });

@@ -37,8 +37,7 @@ const AssignmentDetails = () => {
                                     swal("Poof! Your assignment has been deleted!", {
                                         icon: "success",
                                     });
-                                    // const remaining = assignments.filter(product => product._id !== _id);
-                                    // setAssignments(remaining)
+
                                     navigate('/');
                                     console.log(navigate);
                                 }

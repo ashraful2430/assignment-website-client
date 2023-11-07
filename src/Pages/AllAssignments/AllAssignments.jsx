@@ -1,12 +1,15 @@
 
-import { useLoaderData } from 'react-router-dom';
-import AssignmentsCard from './AssignmentsCard';
+
 import { motion, useScroll, useSpring } from 'framer-motion'
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
+import AllPageData from './AllPageData';
+
 
 
 
 const AllAssignments = () => {
-    const allAssignments = useLoaderData();
+
 
     const { scrollYProgress } = useScroll();
     const reverseStiffness = 100;
@@ -24,10 +27,29 @@ const AllAssignments = () => {
                     <h1 className='mt-16 text-4xl font-bold text-center '>All Assignments</h1>
                     <motion.div style={{ scaleX }} id='progressbar' className='h-2 bg-black '></motion.div>
                 </div>
+                <Tabs>
+                    <TabList>
+                        <Tab>All</Tab>
+                        <Tab>Easy</Tab>
+                        <Tab>Medium</Tab>
+                        <Tab>Hard</Tab>
+                    </TabList>
 
-                {
-                    allAssignments.map(assignment => <AssignmentsCard key={assignment._id} assignment={assignment}></AssignmentsCard>)
-                }
+                    <TabPanel>
+                        <AllPageData></AllPageData>
+                    </TabPanel>
+                    <TabPanel>
+                        3
+                    </TabPanel>
+                    <TabPanel>
+                        4
+                    </TabPanel>
+                    <TabPanel>
+                        5
+                    </TabPanel>
+
+                </Tabs>
+
             </section>
         </div>
     );

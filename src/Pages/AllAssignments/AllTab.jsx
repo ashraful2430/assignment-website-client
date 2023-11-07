@@ -1,6 +1,7 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import EasyAssignmentTab from './EasyAssignmentTab';
+import AllAssignments from './AllAssignments';
 
 const AllTab = () => {
     return (
@@ -14,7 +15,7 @@ const AllTab = () => {
                 </TabList>
 
                 <TabPanel>
-                    <AllTab></AllTab>
+                    <AllAssignments></AllAssignments>
                 </TabPanel>
                 <TabPanel>
                     <EasyAssignmentTab></EasyAssignmentTab>
