@@ -5,7 +5,6 @@ import AssignmentsCard from "./AssignmentsCard";
 const EasyAssignment = () => {
     const [allAssignments, setAllAssignments] = useState([]);
 
-    console.log(allAssignments);
     useEffect(() => {
         fetch(`http://localhost:5000/assignments?difficulty=easy`)
             .then(res => res.json())

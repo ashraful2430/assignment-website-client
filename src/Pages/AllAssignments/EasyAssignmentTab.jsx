@@ -12,7 +12,7 @@ const EasyAssignmentTab = () => {
                 setEasy(data);
             })
     }, [])
-    console.log(easy);
+
     return (
         <div>
             {

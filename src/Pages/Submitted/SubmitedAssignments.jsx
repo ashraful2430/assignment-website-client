@@ -32,7 +32,7 @@ const SubmitedAssignments = () => {
             .then((response) => response.json())
             .then((data) => {
                 setSubmitted(data);
-                console.log(data);
+
             })
             .catch((error) => console.error(error));
     }, []);
@@ -43,18 +43,20 @@ const SubmitedAssignments = () => {
             <Container>
                 <div className="pb-20">
                     {submitted === null ? (
-                        // Loading state while data is being fetched
+
                         <p>Loading...</p>
                     ) : submitted.length === 0 ? (
-                        <div style={{ height: "50vh", textAlign: "center" }}>
-                            <p className="text-center font-semibold text-3xl">
-                                You have no pending assignments.
-                            </p>
-                            <Link to={"/assignments"}>
-                                <button className="text-center btn btn-outline mt-4 bg-red-500 text-white">
-                                    See All Assignments
-                                </button>
-                            </Link>
+                        <div className="flex items-center justify-center" style={{ height: "50vh", textAlign: "center" }}>
+                            <div>
+                                <p className="text-center font-semibold text-3xl ">
+                                    You have no pending assignments.
+                                </p>
+                                <Link to={"/assignments"}>
+                                    <button className="text-center btn btn-outline mt-4 bg-red-500 text-white">
+                                        See All Assignments
+                                    </button>
+                                </Link>
+                            </div>
                         </div>
                     ) : (
                         <motion.div

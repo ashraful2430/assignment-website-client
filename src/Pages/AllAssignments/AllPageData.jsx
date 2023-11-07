@@ -6,7 +6,7 @@ const AllPageData = () => {
 
     const [allAssignments, setAllAssignments] = useState([]);
 
-    console.log(allAssignments);
+
     useEffect(() => {
         fetch('http://localhost:5000/assignments')
             .then(res => res.json())

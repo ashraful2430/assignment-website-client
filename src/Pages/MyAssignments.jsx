@@ -15,7 +15,7 @@ const MyAssignments = () => {
             .then(res => res.json())
             .then(data => {
                 setSubmitted(data);
-                console.log(data);
+
             })
     }, [url])
     return (

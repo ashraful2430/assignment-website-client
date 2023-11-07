@@ -10,9 +10,9 @@ const SubmitMark = ({ submit }) => {
                 <figure><img src={thumbnail} alt="" className='h-52' /></figure>
                 <div className="card-body w-full">
                     <h2 className="card-title">{title}</h2>
-                    <div className='flex gap-5 items-center w-full'>
-                        <p className='font-bold text-lg'>Examinee Name:{userName}</p>
-                        <p className='font-bold text-lg'>Marks:{marks}</p>
+                    <div className='space-y-4 w-full'>
+                        <p className='font-bold '>Examinee Name:{userName}</p>
+                        <p className='font-bold text-base'>Marks:{marks}</p>
                     </div>
                     <Link to={`/markAssignment/${_id}`}>
                         <div className="card-actions w-full">

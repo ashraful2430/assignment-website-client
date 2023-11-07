@@ -50,7 +50,7 @@ const MarkSubmit = () => {
                                 type="number"
                                 name="obtainMarks"
                                 max={marks}
-                                className="w-full rounded-lg border-black p-4 pe-12 text-sm shadow-sm"
+                                className="w-full rounded-lg border-black p-4 pe-12 text-sm shadow-xl"
                                 placeholder="Marks"
                             />
                         </div>
@@ -62,7 +62,7 @@ const MarkSubmit = () => {
                             <textarea
                                 type=""
                                 name="feedBack"
-                                className="w-full rounded-lg border-black p-4 pe-12 text-sm shadow-sm"
+                                className="w-full rounded-lg border-black p-4 pe-12 text-sm shadow-xl"
                                 placeholder="Enter password"
                             />
 

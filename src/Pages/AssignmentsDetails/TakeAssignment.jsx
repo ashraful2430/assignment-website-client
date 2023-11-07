@@ -5,7 +5,7 @@ import axios from 'axios';
 import swal from 'sweetalert';
 
 const TakeAssignment = ({ singleAssignment, description, date, thumbnail }) => {
-    const { title, marks } = singleAssignment;
+    const { title, marks, difficulty } = singleAssignment;
     const { user } = useContext(AuthContext);
     const userName = user.displayName;
     const handleSubmitAssignment = e => {
@@ -18,8 +18,10 @@ const TakeAssignment = ({ singleAssignment, description, date, thumbnail }) => {
         const status = 'pending'
         const obtainMarks = 0;
         const feedBack = ''
-        const submittedAssignment = { email, pdfLink, note, title, marks, userName, userProfile, description, date, thumbnail, status, obtainMarks, feedBack }
-        console.log(submittedAssignment);
+        const submittedAssignment = {
+            email, pdfLink, note, title, marks, userName, userProfile, description, date, thumbnail, status, obtainMarks, feedBack, difficulty
+        }
+        console.log(singleAssignment);
 
         axios.post('http://localhost:5000/submitted', submittedAssignment)
             .then(response => {

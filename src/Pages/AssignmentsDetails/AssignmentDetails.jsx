@@ -39,7 +39,7 @@ const AssignmentDetails = () => {
                                     });
 
                                     navigate('/');
-                                    console.log(navigate);
+
                                 }
                             })
                     } else {
