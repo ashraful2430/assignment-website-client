@@ -33,11 +33,11 @@ const MarkSubmit = () => {
     }
     return (
         <div>
-            <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 bg-base-100 shadow-xl">
                 <div className="mx-auto max-w-lg text-center">
                     <h1 className="text-2xl font-bold sm:text-3xl">Marking page</h1>
                 </div>
-                <form onSubmit={handleSubmitMark} className="mx-auto mb-0 mt-8 max-w-md space-y-4">
+                <form onSubmit={handleSubmitMark} className="mx-auto mb-0 mt-8 max-w-md space-y-4 bg-base-100 shadow-lg px-3 py-3">
                     <div className="font-bold space-y-4">
                         <p className="text-lg">Assignment Name:{title}</p>
                         <p>PDF Link:{pdfLink}</p>
@@ -50,7 +50,7 @@ const MarkSubmit = () => {
                                 type="number"
                                 name="obtainMarks"
                                 max={marks}
-                                className="w-full rounded-lg border-black p-4 pe-12 text-sm shadow-xl"
+                                className="w-full rounded-lg border-black p-4 pe-12 text-sm shadow-sm bg-gray-100"
                                 placeholder="Marks"
                             />
                         </div>
@@ -62,7 +62,7 @@ const MarkSubmit = () => {
                             <textarea
                                 type=""
                                 name="feedBack"
-                                className="w-full rounded-lg border-black p-4 pe-12 text-sm shadow-xl"
+                                className="w-full rounded-lg border-black p-4 pe-12 text-sm bg-gray-100 shadow-sm"
                                 placeholder="Enter password"
                             />
 

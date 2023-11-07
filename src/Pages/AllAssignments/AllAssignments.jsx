@@ -15,7 +15,7 @@ const AllAssignments = () => {
 
 
     const { scrollYProgress } = useScroll();
-    const reverseStiffness = 100;
+    const reverseStiffness = 200;
     const reverseDamping = 30;
     const scaleX = useSpring(scrollYProgress, {
         stiffness: reverseStiffness,

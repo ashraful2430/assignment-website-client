@@ -28,7 +28,7 @@ const MyAssignments = () => {
                     :
                     <>
                         <div>
-                            <h3>My Assignments</h3>
+                            <h3 className="text-center my-10 text-3xl font-semibold">My Assignments</h3>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                                 {
                                     submitted.map(assignments => <MyAssignmentCard key={assignments._id} assignments={assignments}></MyAssignmentCard>)
