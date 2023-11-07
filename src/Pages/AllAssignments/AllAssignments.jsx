@@ -4,6 +4,9 @@ import { motion, useScroll, useSpring } from 'framer-motion'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import AllPageData from './AllPageData';
+import EasyAssignment from './EasyAssignment';
+import MediumAssignment from './MediumAssignment';
+import HardAssignment from './HardAssignment';
 
 
 
@@ -28,7 +31,7 @@ const AllAssignments = () => {
                     <motion.div style={{ scaleX }} id='progressbar' className='h-2 bg-black '></motion.div>
                 </div>
                 <Tabs>
-                    <TabList>
+                    <TabList className='font-bold mt-5' style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
                         <Tab>All</Tab>
                         <Tab>Easy</Tab>
                         <Tab>Medium</Tab>
@@ -39,13 +42,13 @@ const AllAssignments = () => {
                         <AllPageData></AllPageData>
                     </TabPanel>
                     <TabPanel>
-                        3
+                        <EasyAssignment></EasyAssignment>
                     </TabPanel>
                     <TabPanel>
-                        4
+                        <MediumAssignment></MediumAssignment>
                     </TabPanel>
                     <TabPanel>
-                        5
+                        <HardAssignment></HardAssignment>
                     </TabPanel>
 
                 </Tabs>
