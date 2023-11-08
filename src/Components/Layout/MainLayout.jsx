@@ -1,3 +1,4 @@
+
 import Container from "../Ui/Container";
 import Footer from "./Footer";
 import Navbar from "./Navbar/Navbar";
@@ -16,6 +17,7 @@ const MainLayout = () => {
             <div className="mt-36">
                 <Footer></Footer>
             </div>
+
         </div>
     );
 };

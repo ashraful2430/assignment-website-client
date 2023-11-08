@@ -1,8 +1,10 @@
-# React + Vite
+- Here are some features about my website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+  - Any logged in user can create assignment
+  - Any logged in user can see submitted assignment page
+  - Any logged in user can give mark to any assignment that in submitted assignment page
+  - Only the user that created assignment can delete or update the assignment
+  - In My assignment page only the logged in user submitted assignment will be shown
+  - You can log in via email or google
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+    - Live Link :-
