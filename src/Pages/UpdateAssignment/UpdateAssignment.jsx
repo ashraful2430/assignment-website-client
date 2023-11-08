@@ -29,7 +29,7 @@ const UpdateAssignment = () => {
         console.log(updatedAssignment);
 
         if (user.email === userEmail) {
-            fetch(`http://localhost:5000/assignments/${_id}`, {
+            fetch(`https://y-topaz-chi.vercel.app/assignments/${_id}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

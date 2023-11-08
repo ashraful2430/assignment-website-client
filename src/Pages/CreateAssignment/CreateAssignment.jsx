@@ -46,7 +46,7 @@ const CreateAssignment = () => {
         const userEmail = user.email
         const assignment = { title, difficulty, marks, thumbnail, description, userEmail, date };
 
-        axios.post('http://localhost:5000/assignments', assignment)
+        axios.post('https://y-topaz-chi.vercel.app/assignments', assignment)
             .then(response => {
                 e.target.reset();
                 console.log(response.data);

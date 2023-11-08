@@ -7,7 +7,7 @@ import MyAssignmentCard from "./MyAssignmentCard";
 const MyAssignments = () => {
     const [submitted, setSubmitted] = useState([]);
     const { user } = useContext(AuthContext);
-    const url = `http://localhost:5000/submitted/personal?email=${user?.email}`;
+    const url = `https://y-topaz-chi.vercel.app/submitted/personal?email=${user?.email}`;
 
     useEffect(() => {
         fetch(url, { credentials: 'include' })

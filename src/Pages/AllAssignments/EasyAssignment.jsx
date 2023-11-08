@@ -8,7 +8,7 @@ const EasyAssignment = ({ currentPage, itemPerPage }) => {
     const [allAssignments, setAllAssignments] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/assignments?difficulty=easy&page=${currentPage}&size=${itemPerPage}`)
+        fetch(`https://y-topaz-chi.vercel.app/assignments?difficulty=easy&page=${currentPage}&size=${itemPerPage}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);

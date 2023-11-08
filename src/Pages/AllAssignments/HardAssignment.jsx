@@ -8,7 +8,7 @@ const HardAssignment = ({ currentPage, itemPerPage }) => {
 
     console.log(allAssignments);
     useEffect(() => {
-        fetch(`http://localhost:5000/assignments?difficulty=hard&page=${currentPage}&size=${itemPerPage}`)
+        fetch(`https://y-topaz-chi.vercel.app/assignments?difficulty=hard&page=${currentPage}&size=${itemPerPage}`)
             .then(res => res.json())
             .then(data => {
                 setAllAssignments(data);

@@ -23,7 +23,7 @@ const MarkSubmit = () => {
         const status = 'completed';
         const update = { obtainMarks, feedBack, status };
 
-        fetch(`http://localhost:5000/submitted/${_id}`, {
+        fetch(`https://y-topaz-chi.vercel.app/submitted/${_id}`, {
             credentials: 'include',
             method: 'PUT',
             headers: {

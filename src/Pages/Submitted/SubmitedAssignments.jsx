@@ -28,7 +28,7 @@ const SubmitedAssignments = () => {
     const [submitted, setSubmitted] = useState(null);
 
     useEffect(() => {
-        fetch("http://localhost:5000/submitted?status=pending", { credentials: 'include' })
+        fetch("https://y-topaz-chi.vercel.app/submitted?status=pending", { credentials: 'include' })
             .then((response) => response.json())
             .then((data) => {
                 setSubmitted(data);
