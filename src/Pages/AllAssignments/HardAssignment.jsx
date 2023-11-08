@@ -10,7 +10,6 @@ const HardAssignment = () => {
         fetch(`http://localhost:5000/assignments?difficulty=hard`)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 setAllAssignments(data);
             })
     }, [])

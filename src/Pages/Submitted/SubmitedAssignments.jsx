@@ -44,7 +44,7 @@ const SubmitedAssignments = () => {
                 <div className="pb-20">
                     {submitted === null ? (
 
-                        <p>Loading...</p>
+                        <p className="flex justify-center items-center font-bold text-4xl">Loading...</p>
                     ) : submitted.length === 0 ? (
                         <div className="flex items-center justify-center" style={{ height: "50vh", textAlign: "center" }}>
                             <div>
