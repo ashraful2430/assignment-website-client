@@ -1,19 +1,20 @@
 import { useEffect, useState } from "react";
 import AssignmentsCard from "./AssignmentsCard";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
+const MediumAssignment = ({ currentPage, itemPerPage }) => {
 
-const MediumAssignment = () => {
     const [allAssignments, setAllAssignments] = useState([]);
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/assignments?difficulty=medium`)
+        fetch(`http://localhost:5000/assignments?difficulty=medium&page=${currentPage}&size=${itemPerPage}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
                 setAllAssignments(data);
             })
-    }, [])
+    }, [currentPage, itemPerPage])
 
     return (
         <>
@@ -36,6 +37,10 @@ const MediumAssignment = () => {
                 </div>}
         </>
     );
+};
+MediumAssignment.propTypes = {
+    currentPage: PropTypes.number.isRequired,
+    itemPerPage: PropTypes.number.isRequired,
 };
 
 export default MediumAssignment;

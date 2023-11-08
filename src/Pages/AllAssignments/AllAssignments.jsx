@@ -27,7 +27,16 @@ const AllAssignments = () => {
         setItemPerPage(val);
         setCurrentPage(0)
     }
-
+    const handlePrevPage = () => {
+        if (currentPage > 0) {
+            setCurrentPage(currentPage - 1)
+        }
+    }
+    const handleNextPage = () => {
+        if (currentPage < pages.length - 1) {
+            setCurrentPage(currentPage + 1)
+        }
+    }
     const { scrollYProgress } = useScroll();
     const reverseStiffness = 200;
     const reverseDamping = 30;
@@ -44,7 +53,7 @@ const AllAssignments = () => {
                     <h1 className='mt-16 text-4xl font-bold text-center '>All Assignments</h1>
                     <motion.div style={{ scaleX }} id='progressbar' className='h-2 bg-black '></motion.div>
                 </div>
-                <Tabs>
+                <Tabs onSelect={() => setCurrentPage(0)}>
                     <TabList className='font-bold mt-5' style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
                         <Tab>All</Tab>
                         <Tab>Easy</Tab>
@@ -53,21 +62,21 @@ const AllAssignments = () => {
                     </TabList>
 
                     <TabPanel>
-                        <AllPageData></AllPageData>
+                        <AllPageData currentPage={currentPage} itemPerPage={itemPerPage}></AllPageData>
                     </TabPanel>
                     <TabPanel>
-                        <EasyAssignment></EasyAssignment>
+                        <EasyAssignment currentPage={currentPage} itemPerPage={itemPerPage}></EasyAssignment>
                     </TabPanel>
                     <TabPanel>
-                        <MediumAssignment></MediumAssignment>
+                        <MediumAssignment currentPage={currentPage} itemPerPage={itemPerPage}></MediumAssignment>
                     </TabPanel>
                     <TabPanel>
-                        <HardAssignment></HardAssignment>
+                        <HardAssignment currentPage={currentPage} itemPerPage={itemPerPage}></HardAssignment>
                     </TabPanel>
 
                 </Tabs>
                 <div className='flex justify-center items-center gap-5 mt-14 lg:mt-0'>
-                    <button className='btn bg-red-500 text-white'>Previous</button>
+                    <button onClick={handlePrevPage} className='btn bg-red-500 text-white'>Previous</button>
                     {
                         pages.map(page => <button
                             onClick={() => setCurrentPage(page)}
@@ -78,7 +87,7 @@ const AllAssignments = () => {
                             {page}
                         </button>)
                     }
-                    <button className='btn bg-red-500 text-white'>Next</button>
+                    <button onClick={handleNextPage} className='btn bg-red-500 text-white'>Next</button>
                     <select className='bg-red-500 text-white px-2 py-2 rounded-lg' value={itemPerPage} onChange={handleItemPerPage} name="" id="">
                         <option value="2">2</option>
                         <option value="4">4</option>

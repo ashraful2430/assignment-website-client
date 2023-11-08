@@ -1,18 +1,19 @@
 import { useEffect, useState } from "react";
 import AssignmentsCard from "./AssignmentsCard";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
+const HardAssignment = ({ currentPage, itemPerPage }) => {
 
-const HardAssignment = () => {
     const [allAssignments, setAllAssignments] = useState([]);
 
     console.log(allAssignments);
     useEffect(() => {
-        fetch(`http://localhost:5000/assignments?difficulty=hard`)
+        fetch(`http://localhost:5000/assignments?difficulty=hard&page=${currentPage}&size=${itemPerPage}`)
             .then(res => res.json())
             .then(data => {
                 setAllAssignments(data);
             })
-    }, [])
+    }, [currentPage, itemPerPage])
 
     return (
         <>
@@ -36,5 +37,8 @@ const HardAssignment = () => {
         </>
     );
 };
-
+HardAssignment.propTypes = {
+    currentPage: PropTypes.number.isRequired,
+    itemPerPage: PropTypes.number.isRequired,
+};
 export default HardAssignment;

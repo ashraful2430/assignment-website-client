@@ -1,21 +1,21 @@
 import { useEffect, useState } from 'react';
-
+import PropTypes from 'prop-types';
 import AssignmentsCard from './AssignmentsCard';
 import { Link } from 'react-router-dom';
 
-const AllPageData = () => {
-
+const AllPageData = ({ currentPage, itemPerPage }) => {
+    console.log(currentPage, itemPerPage);
     const [allAssignments, setAllAssignments] = useState([]);
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/assignments')
+        fetch(`http://localhost:5000/assignments?page=${currentPage}&size=${itemPerPage}`)
             .then(res => res.json())
             .then(data => {
 
                 setAllAssignments(data);
             })
-    }, [])
+    }, [currentPage, itemPerPage])
 
     return (
         <>
@@ -41,7 +41,8 @@ const AllPageData = () => {
 };
 
 AllPageData.propTypes = {
-
+    currentPage: PropTypes.number.isRequired,
+    itemPerPage: PropTypes.number.isRequired,
 };
 
 export default AllPageData;
