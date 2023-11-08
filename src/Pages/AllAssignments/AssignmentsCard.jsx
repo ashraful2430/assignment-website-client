@@ -29,10 +29,10 @@ const AssignmentsCard = ({ assignment }) => {
 
     return (
         <>
-            <section className='h-screen mt-4'>
+            <section className='lg:h-[80vh] mt-4'>
                 <motion.div variants={testVariants} initial="initial" animate="animate" className='flex flex-col lg:flex-row justify-center items-center gap-10 max-w-6xl mx-auto mt-36 md:mt-64 lg:mt-0'>
                     <div className='flex-1'>
-                        <img className='md:h-[400px]' src={thumbnail} alt="" />
+                        <img className='h-[400px] w-[500px]' src={thumbnail} alt="" />
                     </div>
                     <div className='flex-1 space-y-4'>
                         <h3 className='text-3xl font-semibold'>{title}</h3>

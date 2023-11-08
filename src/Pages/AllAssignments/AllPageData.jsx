@@ -12,7 +12,7 @@ const AllPageData = () => {
         fetch('http://localhost:5000/assignments')
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+
                 setAllAssignments(data);
             })
     }, [])
@@ -31,7 +31,7 @@ const AllPageData = () => {
                     </div>
                 </>
                 :
-                <div>
+                <div className=''>
                     {
                         allAssignments.map(assignment => <AssignmentsCard key={assignment._id} assignment={assignment}></AssignmentsCard>)
                     }

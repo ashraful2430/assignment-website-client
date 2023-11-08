@@ -1,3 +1,4 @@
+
 import Banner from "../Banner/Banner";
 import Faq from "../FAQ/Faq";
 
@@ -17,6 +18,7 @@ const Home = () => {
             <div className="mt-20 mb-10">
                 <Faq></Faq>
             </div>
+
         </div>
     );
 };
