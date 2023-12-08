@@ -2,7 +2,7 @@
 
 ## Overview
 
-Welcome to Learn It Write It – a platform for creating, taking, and managing assignments. This web application is built with React, Tailwind CSS, Daisy UI, MongoDB, Node.js, and Express.js. The platform facilitates the assignment creation process, allows users to take assignments, and provides a comprehensive overview of assignment statuses and results.
+Welcome to Learn It Write It – a platform for creating, taking, and managing assignments. This web application is built with React, Tailwind CSS, Daisy UI, MongoDB, Node.js, and Express.js and firebase for authentication. The platform facilitates the assignment creation process, allows users to take assignments, and provides a comprehensive overview of assignment statuses and results.
 
 ## Live Link
 
