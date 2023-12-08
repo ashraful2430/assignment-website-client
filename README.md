@@ -1,11 +1,47 @@
-- Here are some features about my website
+# Learn It Write It
 
-  - Any logged in user can create assignment
-  - Any logged in user can see submitted assignment page
-  - Any logged in user can give mark to any assignment that in submitted assignment page
-  - Only the user that created assignment can delete or update the assignment
-  - In My assignment page only the logged in user submitted assignment will be shown
-  - You can log in via email or google
-  - You can filter the data via difficulty level
+## Overview
 
-    - Live Link :- https://cars-doctor-958c0.firebaseapp.com/?_gl=1*1yjwww4*_ga*MTQwNTQzNjgxMy4xNjk1ODI4MTEz*_ga_CW55HF8NVT*MTY5OTQ1NzM2OC4xMDkuMS4xNjk5NDU4MjMzLjU4LjAuMA..
+Welcome to Learn It Write It – a platform for creating, taking, and managing assignments. This web application is built with React, Tailwind CSS, Daisy UI, MongoDB, Node.js, and Express.js. The platform facilitates the assignment creation process, allows users to take assignments, and provides a comprehensive overview of assignment statuses and results.
+
+## Live Link
+
+Explore the [Learn it write it](https://glistening-nasturtium-e44e6f.netlify.app)
+
+## Features
+
+### For Visitors:
+
+1. **Assignment Viewing:**
+   - Visitors can view all available assignments on the platform.
+
+### For Logged-In Users:
+
+1. **Assignment Creation:**
+
+   - Users can create assignments, specifying details such as questions, difficulty level, etc.
+
+2. **Assignment Taking:**
+
+   - Users can take assignments, submit answers, and receive marks upon completion.
+
+3. **Assignment Management:**
+
+   - Assignment creators can update or delete their own assignments.
+
+4. **Assignment Status:**
+
+   - Users can view the status of their taken assignments, including pending and completed.
+
+5. **Feedback and Marks:**
+
+   - Users can see feedback and marks received for completed assignments.
+
+6. **Filtering and Pagination:**
+   - In the "All Assignments" route, users can filter assignments based on difficulty level.
+   - Pagination is implemented to display a limited number of assignments at a time.
+
+### Additional Features:
+
+- **UI Animation:**
+  - Utilizes Framer Motion for animations, providing an enhanced user experience.
