@@ -1,26 +1,26 @@
-
 import Banner from "../Banner/Banner";
 import Faq from "../FAQ/Faq";
 
 import Featured from "../Featured/Featured";
-
-
+import Recent from "../Recent/Recent";
 
 const Home = () => {
-    return (
-        <div className="px-4">
-            <div className="mb-10">
-                <Banner></Banner>
-            </div>
-            <div className="mt-20">
-                <Featured></Featured>
-            </div>
-            <div className="mt-20 mb-10">
-                <Faq></Faq>
-            </div>
-
-        </div>
-    );
+  return (
+    <div className="px-4">
+      <div className="mb-10">
+        <Banner></Banner>
+      </div>
+      <div>
+        <Recent />
+      </div>
+      <div className="mt-20">
+        <Featured></Featured>
+      </div>
+      <div className="mt-20 mb-10">
+        <Faq></Faq>
+      </div>
+    </div>
+  );
 };
 
 export default Home;

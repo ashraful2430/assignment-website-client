@@ -56,7 +56,6 @@ const CreateAssignment = () => {
       .post("http://localhost:5000/assignments", assignment)
       .then((response) => {
         e.target.reset();
-        console.log(response.data);
         if (response.data.insertedId) {
           swal("Well Done!", "Assignment added successfully!", "success");
         }
