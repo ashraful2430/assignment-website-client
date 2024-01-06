@@ -37,7 +37,7 @@ const TakeAssignment = ({ singleAssignment, description, date, thumbnail }) => {
     console.log(singleAssignment);
 
     axios
-      .post("http://localhost:5000/submitted", submittedAssignment)
+      .post("https://y-topaz-chi.vercel.app/submitted", submittedAssignment)
       .then((response) => {
         e.target.reset();
         console.log(response.data);

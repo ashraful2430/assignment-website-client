@@ -3,10 +3,11 @@ import Faq from "../FAQ/Faq";
 
 import Featured from "../Featured/Featured";
 import Recent from "../Recent/Recent";
+import Testimonials from "../Testimonials/Testimonials";
 
 const Home = () => {
   return (
-    <div className="px-4">
+    <div className="px-4 font-sans">
       <div className="mb-10">
         <Banner></Banner>
       </div>
@@ -16,7 +17,10 @@ const Home = () => {
       <div className="mt-20">
         <Featured></Featured>
       </div>
-      <div className="mt-20 mb-10">
+      <div className="mt-10">
+        <Testimonials />
+      </div>
+      <div className="mt-20">
         <Faq></Faq>
       </div>
     </div>

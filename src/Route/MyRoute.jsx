@@ -28,7 +28,7 @@ const router = createBrowserRouter([
       {
         path: "/assignments",
         element: <AllAssignments></AllAssignments>,
-        loader: () => fetch("http://localhost:5000/assignmentsCount"),
+        loader: () => fetch("https://y-topaz-chi.vercel.app/assignmentsCount"),
       },
       {
         path: "/createAssignments",
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/assignments/${params.id}`),
+          fetch(`https://y-topaz-chi.vercel.app/assignments/${params.id}`),
       },
       {
         path: "/assignmentDetails/:id",
@@ -65,13 +65,13 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/assignments/${params.id}`),
+          fetch(`https://y-topaz-chi.vercel.app/assignments/${params.id}`),
       },
       {
         path: "/markAssignment/:id",
         element: <MarkSubmit></MarkSubmit>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/submitted/${params.id}`),
+          fetch(`https://y-topaz-chi.vercel.app/submitted/${params.id}`),
       },
     ],
   },

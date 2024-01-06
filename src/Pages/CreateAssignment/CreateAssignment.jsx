@@ -53,7 +53,7 @@ const CreateAssignment = () => {
     };
 
     axios
-      .post("http://localhost:5000/assignments", assignment)
+      .post("https://y-topaz-chi.vercel.app/assignments", assignment)
       .then((response) => {
         e.target.reset();
         if (response.data.insertedId) {

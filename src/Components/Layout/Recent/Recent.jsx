@@ -6,7 +6,7 @@ const Recent = () => {
   const [recents, isLoading] = useRecent();
   return (
     <>
-      <p className="text-center mt-14 font-semibold text-4xl">
+      <p className="text-center mt-14 font-semibold text-2xl lg:text-4xl mb-8">
         Recent Assignments
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">

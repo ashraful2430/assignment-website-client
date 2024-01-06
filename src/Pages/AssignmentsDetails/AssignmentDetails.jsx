@@ -31,7 +31,7 @@ const AssignmentDetails = () => {
         dangerMode: true,
       }).then((willDelete) => {
         if (willDelete) {
-          fetch(`http://localhost:5000/assignments/${_id}`, {
+          fetch(`https://y-topaz-chi.vercel.app/assignments/${_id}`, {
             method: "DELETE",
           })
             .then((res) => res.json())

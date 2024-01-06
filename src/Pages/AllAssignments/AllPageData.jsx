@@ -9,7 +9,7 @@ const AllPageData = ({ currentPage, itemPerPage }) => {
 
   useEffect(() => {
     fetch(
-      `http://localhost:5000/assignments?page=${currentPage}&size=${itemPerPage}`
+      `https://y-topaz-chi.vercel.app/assignments?page=${currentPage}&size=${itemPerPage}`
     )
       .then((res) => res.json())
       .then((data) => {
