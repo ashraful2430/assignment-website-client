@@ -2,12 +2,14 @@
 
 ## Overview
 
-Welcome to Learn It Write It – a platform for creating, taking, and managing assignments. This web application is built with React, Tailwind CSS, Daisy UI, MongoDB, Node.js, and Express.js and firebase for authentication. The platform facilitates the assignment creation process, allows users to take assignments, and provides a comprehensive overview of assignment statuses and results.
+Welcome to Learn It Write It – a platform for creating, taking, and managing assignments. This web application is built with React, Tailwind CSS, Daisy UI, MongoDB, Node.js, Express.js, and Firebase for authentication. The platform facilitates the assignment creation process, allows users to take assignments, and provides a comprehensive overview of assignment statuses and results.
 
 ## Live Link
 
 Explore the [Learn it write it](https://glistening-nasturtium-e44e6f.netlify.app)
 
+## Backend Link
+See my backend code [here](https://github.com/ashraful2430/assignment-website-server)
 ## Features
 
 ### For Visitors:
@@ -27,7 +29,7 @@ Explore the [Learn it write it](https://glistening-nasturtium-e44e6f.netlify.app
 
 3. **Assignment Management:**
 
-   - Assignment creators can update or delete their own assignments.
+   - Assignment creators can update or delete their assignments.
 
 4. **Assignment Status:**
 
